@@ -72,11 +72,12 @@ const Test = () => {
         const { _id, que, type, opt1, opt2, opt3, opt4 } = obj;
         return (
           <Card className="px-3 py-3 mx-3 my-3">
-            <h3>
+            <h3 key={"que_" + index}>
               {index + 1}. {que}
             </h3>
             <p>
               <input
+                key={"opt1_" + index}
                 onChange={fnChange}
                 value="A"
                 className="me-2"
@@ -87,6 +88,7 @@ const Test = () => {
             </p>
             <p>
               <input
+                key={"opt2_" + index}
                 onChange={fnChange}
                 value="B"
                 className="me-2"
@@ -97,6 +99,7 @@ const Test = () => {
             </p>
             <p>
               <input
+                key={"opt3_" + index}
                 onChange={fnChange}
                 value="C"
                 className="me-2"
@@ -107,6 +110,7 @@ const Test = () => {
             </p>
             <p>
               <input
+                key={"opt4_" + index}
                 onChange={fnChange}
                 value="D"
                 className="me-2"
