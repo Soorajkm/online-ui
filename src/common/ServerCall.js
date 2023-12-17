@@ -1,7 +1,7 @@
 import axios from "axios";
 class ServerCall {
   static fnSendGetReq(url) {
-    return axios.get(BASE_URL + url, {
+    return axios.get(`${process.env.NEXT_PUBLIC_BACKEND_URL}` + url, {
       headers: {
         Authorization: sessionStorage.token,
       },

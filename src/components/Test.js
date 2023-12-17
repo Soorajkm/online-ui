@@ -3,6 +3,7 @@ import ServerCall from "@/common/ServerCall";
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import { ctx } from "@/context/appContext";
+
 const Test = () => {
   const [questions, setQuestions] = useState([]);
   const [key, setKey] = useState({});
@@ -18,9 +19,7 @@ const Test = () => {
       setKey(_keyObj);
       setQuestions(res.data);
       console.log(res.data);
-    } catch (ex) {
-      setQuestions(res.data);
-    }
+    } catch (ex) {}
   };
   useEffect(() => {
     fnGetQuestions();
