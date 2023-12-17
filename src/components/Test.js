@@ -19,7 +19,9 @@ const Test = () => {
       setKey(_keyObj);
       setQuestions(res.data);
       console.log(res.data);
-    } catch (ex) {}
+    } catch (ex) {
+      setQuestions(res.data);
+    }
   };
   useEffect(() => {
     fnGetQuestions();
@@ -70,13 +72,13 @@ const Test = () => {
       {questions.map((obj, index) => {
         const { _id, que, type, opt1, opt2, opt3, opt4 } = obj;
         return (
-          <Card className="px-3 py-3 mx-3 my-3">
-            <h3 key={"que_" + index}>
+          <Card key={index} className="px-3 py-3 mx-3 my-3">
+            <h3>
               {index + 1}. {que}
             </h3>
-            <p>
+            <p key={"para1_" + index}>
               <input
-                key={"opt1_" + index}
+                key={"opt1_"}
                 onChange={fnChange}
                 value="A"
                 className="me-2"
@@ -85,9 +87,9 @@ const Test = () => {
               />
               {opt1}
             </p>
-            <p>
+            <p key={"para2_" + index}>
               <input
-                key={"opt2_" + index}
+                key={"opt2_"}
                 onChange={fnChange}
                 value="B"
                 className="me-2"
@@ -96,7 +98,7 @@ const Test = () => {
               />
               {opt2}
             </p>
-            <p>
+            <p key={"para3_" + index}>
               <input
                 key={"opt3_" + index}
                 onChange={fnChange}
@@ -107,9 +109,9 @@ const Test = () => {
               />
               {opt3}
             </p>
-            <p>
+            <p key={"para4_" + index}>
               <input
-                key={"opt4_" + index}
+                key={"opt4_"}
                 onChange={fnChange}
                 value="D"
                 className="me-2"

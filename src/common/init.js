@@ -1,3 +1,6 @@
 export const init = {
-  isLoggedIn: sessionStorage.token ? true : false,
+  isLoggedIn:
+    typeof sessionStorage !== "undefined" && sessionStorage.token
+      ? true
+      : false,
 };
